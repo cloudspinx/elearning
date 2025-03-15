@@ -1,4 +1,4 @@
-Introduction to Virtualization
+# Introduction to Virtualization
 
 Imagine you have **four physical servers**: a web server, mail server, database server, and lastly an application server. Let's assume each server is operating at only *35%* capacity. While these servers get the job done, each is sitting idle most of the time, and we can all agree this is a wastage of precious resources. This is where virtualization comes in!
 
