@@ -1,4 +1,4 @@
-## Installation of KVM on Linux Systems
+# Installation of KVM on Linux Systems
 
 In this chapter we will cover the setup process of KVM on various Linux distributions like Debian, Ubuntu, CentOS, AlmaLinux, Rocky Linux, Arch Linux, openSUSE/SUSE, and RHEL.
 
@@ -28,7 +28,7 @@ grep -Ec '(vmx|svm)' /proc/cpuinfo
 
 If the output provided has a number **greater than** **zero**, it means CPU supports hardware virtualization.
 
-### Installation of KVM on Debian / Ubuntu
+## Installation of KVM on Debian / Ubuntu
 
 Begin by ensuring the system packages are up-to-date:
 
@@ -106,7 +106,7 @@ The `libvirtd` service needs tp be restarted after the change:
 sudo systemctl restart libvirtd
 ```
 
-### Install KVM on Rocky / AlmaLinux / CentOS Stream / Fedora
+## Install KVM on Rocky / AlmaLinux / CentOS Stream / Fedora
 
 KVM can be installed on Rocky Linux, AlmaLinux, CentOS Stream, or Fedora operating systems using the steps provided in this section. All these distributions mentioned are similar and the same process apply when setting up KVM.
 
@@ -158,7 +158,7 @@ Start and enable the `libvirtd` daemon to start at system boot.
 sudo systemctl enable --now libvirtd
 ```
 
-### Installation of KVM on openSUSE / SUSE
+## Installation of KVM on openSUSE / SUSE
 
 In this section you will learn how to install KVM hypervisor on openSUSE and SUSE Linux distributions.
 
@@ -210,7 +210,7 @@ sudo systemctl start libvirtd
 sudo systemctl enable libvirtd 
 ```
 
-### Installation of KVM on RHEL
+## Installation of KVM on RHEL
 
 Login to your RHEL server and make sure it's registered
 
@@ -283,7 +283,7 @@ To chek if it' running we run:
 systemctl status libvirtd
 ```
 
-### Installation of KVM on Arch-based systems
+## Installation of KVM on Arch-based systems
 
 Arch-based Linux distributions are known for their simplicity, flexibility, and user-centric approach. The following are major distributions based on Arch Linux:
 
@@ -363,7 +363,7 @@ To check service status use the command
 systemctl status libvirtd
 ```
 
-### Verify Virtualization Host Readiness
+## Verify Virtualization Host Readiness
 
 To verify that your system is prepared to be a virtualization host, run the command below:
 
@@ -393,7 +393,7 @@ If `virt-host-validate`generates generates the following output then your host C
 QEMU: Checking for hardware virtualization: FAIL (Only emulated CPUs are available, performance will be significantly limited)
 ```
 
-### Libvirt Service Management
+## Libvirt Service Management
 
 Libvirt is an open source virtualization API that provides a consistent interface enabling you to provision, start, stop, migrate, and monitor VMs on KVM hypervisor.
 
@@ -401,7 +401,7 @@ The management of the `libvirtd` service can vary slightly depending on the host
 
 Here's we show you how the management of the `libvirtd` service can be performed on different init systems. The list should cover the common Libvirtd service management operations you might need to perform on various systems.
 
-#### 1. **Systemd**
+### 1. **Systemd**
 
 Enable `libvirtd` service to start on system boot:
 
@@ -445,7 +445,7 @@ Disable the `libvirtd` service so it does not start on boot:
 sudo systemctl disable libvirtd
 ```
 
-#### 2. **SysVinit**
+### 2. **SysVinit**
 
 Enable the `libvirtd` service to start on boot:
 
@@ -489,7 +489,7 @@ Disable the `libvirtd` service so it does not start on boot:
 sudo chkconfig libvirtd off
 ```
 
-#### 3. **Upstart**
+### 3. **Upstart**
 
 Upstart is primarily used in older versions of Ubuntu (from 9.10 to 14.10) and some other distributions.
 
@@ -523,7 +523,7 @@ Reload the `libvirtd` service configuration without stopping it:
 sudo reload libvirtd
 ```
 
-#### Summary of Commands
+### Summary of Commands
 
 | Action          | Systemd                      | SysVinit                   | Upstart            |
 | --------------- | ---------------------------- | -------------------------- | ------------------ |
@@ -535,7 +535,7 @@ sudo reload libvirtd
 | Reload service  | `systemctl reload libvirtd`  | `service libvirtd reload`  | `reload libvirtd`  |
 | Disable service | `systemctl disable libvirtd` | `chkconfig libvirtd off`   | N/A                |
 
-### Allow standard users to manage KVM
+## Allow standard users to manage KVM
 
 For security reasons, KVM by default restricts management operations to users with root privileges.
 
@@ -637,7 +637,7 @@ The user can also use graphical tools like `virt-manager` to manage the VMs:
 virt-manager
 ```
 
-### Enabling IOMMU on host system
+## Enabling IOMMU on host system
 
 In KVM, IOMMU (Input-Output Memory Management Unit) is a hardware functionality that gives better security to the VMs by ensuring that they don't interfere with the memory each other.
 
@@ -653,7 +653,7 @@ grep -E --color 'vmx|svm' /proc/cpuinfo
 
 If you get any output it means your system likely supports IOMMU.
 
-#### Enable IOMMU on Debian based systems
+### Enable IOMMU on Debian based systems
 
 To enable IOMMU we need to modify OS kernel boot parameters. Open the file `/etc/default/grub`with a text editor of your choice.
 
@@ -701,7 +701,7 @@ For the changes to take effect, you will need to reboot the system.
 sudo reboot
 ```
 
-#### Enable IOMMU on RHEL based systems
+### Enable IOMMU on RHEL based systems
 
 As a root or user with administrative privileges, open GRUB configuration file
 
@@ -749,7 +749,7 @@ For the changes to take effect you must reboot the server.
 sudo shutdown -r now
 ```
 
-#### Confirm if IOMMU is enabled
+### Confirm if IOMMU is enabled
 
 Once the system has been rebooted, you can verify if IOMMU is enabled by querying the current kernel boot parameters:
 
