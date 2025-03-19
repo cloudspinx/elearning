@@ -549,9 +549,7 @@ $ virsh net-list
 
 We can see the list is empty yet default network exists in this KVM node.
 
-For standard (non-root) Linux users to manage KVM hypervisor we need to setup appropriate configurations and user permissions.
-
-Follow these detailed steps to safely grant non-root users powers to perform tasks on KVM.
+For standard (non-root) Linux users to manage KVM hypervisor we need to setup appropriate configurations and user permissions. Follow these detailed steps to safely grant non-root users powers to perform tasks on KVM.
 
 1. **Create a New User Group**: Let's create a new user group called `libvirt`. This group will have the necessary permissions to administer with KVM. Skip if it exists and go to step 2.
    
@@ -575,7 +573,7 @@ Follow these detailed steps to safely grant non-root users powers to perform tas
    
    Locate the line `unix_sock_group` in the configuration file:
    
-   ```
+   ```bash
    #unix_sock_group = "libvirt"
    ```
 
@@ -655,7 +653,7 @@ If you get any output it means your system likely supports IOMMU.
 
 ### Enable IOMMU on Debian based systems
 
-To enable IOMMU we need to modify OS kernel boot parameters. Open the file `/etc/default/grub`with a text editor of your choice.
+To enable IOMMU we need to modify OS kernel boot parameters. Open the file `/etc/default/grub` with a text editor of your choice.
 
 ```bash
 # Open with vim
