@@ -87,7 +87,7 @@ Kernel-based Virtual Machine (KVM) is an open source and free virtualization tec
 
 Each Virtual Machine has its own virtualized hardware like Storage, Memory, CPU, network interface, and virtual BIOS (basic input/output system) making each VM to operate independent of other VMs.
 
-![KVM Architecture](./Images/kvm-illustration.webp)
+![KVM Architecture](https://raw.githubusercontent.com/cloudspinx/elearning/refs/heads/main/Ebooks/Virtualization/KVM/Mastering-KVM-Virtualization/chapters/1-Introduction/Images/kvm-illustration.webp?token=GHSAT0AAAAAADA6YGNWTIJVF5XASBEZT7LMZ667FXA)
 
 Here are the components and and terminology used in KVM:
 
