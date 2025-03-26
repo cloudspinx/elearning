@@ -8,7 +8,7 @@ Before doing any package installation, it is important to check if your CPU supp
 grep -E --color 'vmx|svm' /proc/cpuinfo
 ```
 
-Analyze the output if it contains "**vmx**" or "***svm***," which will mean your CPU supports hardware virtualization.
+Analyze the output if it contains "**vmx**" or "**svm**," which will mean your CPU supports hardware virtualization.
 
 You can as well run the commands separately:
 
