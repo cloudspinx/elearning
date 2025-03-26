@@ -1,2 +1,7 @@
-# Github Structure connected with platform.
+```bash
+# Open with vim
+sudo vim /etc/default/grub
 
+# Open with nano
+sudo nano /etc/default/grub
+```
