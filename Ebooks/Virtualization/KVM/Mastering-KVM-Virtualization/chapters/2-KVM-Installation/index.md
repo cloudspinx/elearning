@@ -401,7 +401,7 @@ The management of the `libvirtd` service can vary slightly depending on the host
 
 Here's we show you how the management of the `libvirtd` service can be performed on different init systems. The list should cover the common Libvirtd service management operations you might need to perform on various systems.
 
-### 1. **Systemd**
+### 1. Systemd
 
 Enable `libvirtd` service to start on system boot:
 
@@ -445,7 +445,7 @@ Disable the `libvirtd` service so it does not start on boot:
 sudo systemctl disable libvirtd
 ```
 
-### 2. **SysVinit**
+### 2. SysVinit
 
 Enable the `libvirtd` service to start on boot:
 
@@ -489,7 +489,7 @@ Disable the `libvirtd` service so it does not start on boot:
 sudo chkconfig libvirtd off
 ```
 
-### 3. **Upstart**
+### 3. Upstart
 
 Upstart is primarily used in older versions of Ubuntu (from 9.10 to 14.10) and some other distributions.
 
